@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1CA655;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #1CA655;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: darkSeaGreen;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #1CA655;
+        }
+		
+		footer {
+		  background-color: #1CA655;
+		  color: white;
+		  text-align: center;
+		  padding: 20px;
+		  font-size: 14px;
+		  animation: fade 1s ease;
+		}
+
+		footer a {
+		  color: white;
+		  text-decoration: underline;
+		}
+    </style>
+    <script>
+        function displayMessage() {
+            var form = document.getElementById('registration-form');
+            var message = document.createElement('div');
+            message.className = 'message';
+            message.textContent = 'Thank you for registration!';
+            form.parentNode.insertBefore(message, form.nextSibling);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness Hub Registration</h1>
+
+        <form id="registration-form" onsubmit="event.preventDefault(); displayMessage();">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <div class="radio-group">
+                <label for="age">Age:</label>
+                <label><input type="radio" name="age" value="Teen"> Teen</label>
+                <label><input type="radio" name="age" value="Adult"> Adult</label>
+            </div>
+
+            <div class="radio-group">
+                <label for="gender">Gender:</label>
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+	<footer>
+    <a>2022 Fitness Hub. | Designed by Cream Cheese</a>
+  </footer>
+</body>
+</html>
+
+
